@@ -8,7 +8,7 @@ export default async function middleware(request: NextRequest) {
     },
   });
 
-  const supabase = createSupabaseReqResClient(request, response);
+  const supabase =  createSupabaseReqResClient(request, response);
 
   const {
     data: { session },
@@ -17,7 +17,7 @@ export default async function middleware(request: NextRequest) {
   const user = session?.user;
 
   if (!user && request.nextUrl.pathname.startsWith("/account")) {
-    return NextResponse.redirect("/");
+    return NextResponse.redirect(new URL("/", request.url));
   }
   return response;
 }
