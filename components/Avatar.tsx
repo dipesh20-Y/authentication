@@ -14,11 +14,14 @@ export default async function Avatar() {
   }
 
   return (
-    <Image
-      src={user?.user_metadata.avatar_url}
+    <div className="flex flex-col items-center mt-24">
+      <Image
+      src={user?.user_metadata?.avatar_url}
       alt="Avatar"
       height={96}
       width={96}
+      className="rounded-full"
     />
+    </div>
   );
 }
