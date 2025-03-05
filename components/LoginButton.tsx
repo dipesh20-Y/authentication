@@ -16,5 +16,9 @@ export default function LoginButton(props: { nextUrl?: string }) {
     });
   };
 
-  return <button onClick={handleLogin}>Login with github</button>
+  return <div className="mt-4">
+     <button
+  className="border border-gray-400 hover:cursor-pointer p-2 hover:text-lg bg-violet-900"
+   onClick={handleLogin}>Login with github</button>
+  </div>
 }
